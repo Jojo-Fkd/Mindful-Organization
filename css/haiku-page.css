@@ -1,0 +1,131 @@
+/* HAIKU PROMPT POPUP / JOUNRAL PROMPT POPUP */
+
+.haiku-prompt,
+.journal-prompt {
+  background: #d8d8d8;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  width: 380px;
+  padding: 2rem 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  display: none;
+}
+
+.journal-prompt {
+  width: 480px;
+}
+
+.haiku-prompt.active,
+.journal-prompt.active {
+  display: flex;
+}
+
+.haiku-prompt section,
+.journal-prompt section {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-direction: column;
+}
+
+.journal-prompt section textarea {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-family: var(--SECONDARY-FONT);
+  padding: 0.5rem 1rem;
+  width: 400px;
+}
+
+/* JOURNAL DISPLAY */
+
+.journal-display {
+  background: #d8d8d8;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  padding: 2rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  display: none;
+}
+
+.journal-display.active {
+  display: flex;
+}
+
+.journal-display p {
+  font-family: var(--SECONDARY-FONT);
+  text-align: center;
+  line-height: 1.7;
+}
+
+#haiku {
+  min-height: 60vh;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+#haiku h3 {
+  font-family: var(--SECONDARY-FONT);
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.haiku {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  padding-right: 2.5rem;
+}
+
+.haiku article {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 0.8rem 1rem;
+  padding-bottom: 2rem;
+}
+
+.haiku article h4 {
+  font-family: var(--SECONDARY-FONT);
+  font-weight: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.haiku article button {
+  background: #444;
+  color: white;
+  font-family: var(--PRIMARY-FONT);
+  font-weight: 300;
+  font-size: 0.65rem;
+  letter-spacing: 0.8px;
+  padding: 0.5rem 0.8rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.haiku article button:hover {
+  background: #666;
+}
+
+.haiku article ul {
+  list-style: none;
+  margin-top: 1rem;
+  text-align: center;
+  font-family: var(--PRIMARY-FONT);
+  font-style: italic;
+  line-height: 1.8;
+  opacity: 0.8;
+}
+
+.haiku article:last-child {
+  display: grid;
+  place-content: center;
+}

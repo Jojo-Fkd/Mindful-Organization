@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mindful Organization.</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/haiku-page.css" />
+    <script defer src="js/script.js"></script>
+    <script defer src="js/haiku-page.js"></script>
+  </head>
+  <body>
+    <!-- POPUP CONTAINER -->
+
+    <div class="popup-container">
+      <form class="verse-prompt">
+        <h2>New Verse</h2>
+        <section>
+          <input required placeholder="Book, Chapter" type="text" />
+          <textarea required placeholder="Verse" cols="30" rows="10"></textarea>
+          <div>
+            <button>Add</button>
+            <button>Cancel</button>
+          </div>
+        </section>
+      </form>
+      <section class="verse-display">
+        <h2></h2>
+        <p></p>
+        <button>Close</button>
+      </section>
+      <form class="haiku-prompt">
+        <h2></h2>
+        <section>
+          <input type="text" required placeholder="line 1" />
+          <input type="text" required placeholder="line 2" />
+          <input type="text" required placeholder="line 3" />
+          <div>
+            <button>Done</button>
+            <button type="button">Cancel</button>
+          </div>
+        </section>
+      </form>
+      <form class="journal-prompt">
+        <h2>Journal</h2>
+        <section>
+          <textarea placeholder="Refect..." cols="30" rows="10"></textarea>
+        </section>
+        <div>
+          <button>Done</button>
+          <button type="button">Cancel</button>
+        </div>
+      </form>
+      <section class="journal-display">
+        <h2>Journal</h2>
+        <p></p>
+        <button>Close</button>
+      </section>
+    </div>
+
+    <header>
+      <h1>Mindful Organization</h1>
+      <section id="current_goals">
+        <h2>
+          Current Goals
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            style="fill: black"
+          >
+            <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path>
+          </svg>
+        </h2>
+        <article></article>
+      </section>
+      <section id="verses">
+        <h2>
+          Verses
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            style="fill: black"
+          >
+            <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path>
+          </svg>
+        </h2>
+        <article></article>
+      </section>
+    </header>
+
+    <main>
+      <section class="header">
+        <div class="header-elements">
+          <h2>Greetings</h2>
+          <h3>February 11, 2024</h3>
+        </div>
+        <div class="goal">
+          <q></q
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="15"
+            height="15"
+            viewBox="0 0 24 24"
+            style="fill: rgba(0, 0, 0, 1)"
+          >
+            <path
+              d="M4 21a1 1 0 0 0 .24 0l4-1a1 1 0 0 0 .47-.26L21 7.41a2 2 0 0 0 0-2.82L19.42 3a2 2 0 0 0-2.83 0L4.3 15.29a1.06 1.06 0 0 0-.27.47l-1 4A1 1 0 0 0 3.76 21 1 1 0 0 0 4 21zM18 4.41 19.59 6 18 7.59 16.42 6zM5.91 16.51 15 7.41 16.59 9l-9.1 9.1-2.11.52z"
+            ></path>
+          </svg>
+        </div>
+        <button><a href="index.html"> back </a></button>
+      </section>
+      <section id="haiku">
+        <h3>Haiku /ˈhʌɪkuː/</h3>
+        <section class="haiku">
+          <article class="add-haiku-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="70"
+              height="70"
+              viewBox="0 0 24 24"
+              style="fill: rgba(0, 0, 0, 0.2)"
+            >
+              <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path>
+            </svg>
+          </article>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,323 @@
+/* FONT FAMILY */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* CSS VARIABLES */
+
+:root {
+  --PRIMARY-FONT: "Roboto";
+  --SECONDARY-FONT: "Playfair Display";
+}
+
+/* CSS RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input,
+textarea,
+button {
+  border: none;
+  outline: none;
+  outline-color: none;
+  background: transparent;
+}
+
+textarea {
+  resize: none;
+}
+
+input[type="checkbox"],
+input[type="radio"],
+button,
+svg {
+  cursor: pointer;
+}
+
+input[disabled] {
+  cursor: auto;
+}
+
+body {
+  background: #e4e4e4;
+  padding-left: 410px;
+}
+
+/* HEADER STYLES */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 380px;
+  background: #e4e4e4;
+  height: 100vh;
+  overflow: auto;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+header::-webkit-scrollbar {
+  width: 10px;
+}
+
+header::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 5px;
+}
+
+header:hover::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  font-family: var(--SECONDARY-FONT);
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 2rem 1rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+#current_goals,
+#verses {
+  margin: 2rem 1rem;
+}
+
+#current_goals h2,
+#verses h2 {
+  font-family: var(--PRIMARY-FONT);
+  font-weight: 300;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+#current_goals h2,
+#verses h2 {
+  text-decoration: underline;
+  text-decoration-color: #666;
+}
+
+#current_goals article,
+#verses article {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  padding: 0.5rem 0.8rem;
+  border-radius: 2px;
+  font-family: var(--SECONDARY-FONT);
+}
+
+#current_goals article.checked p {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+#current_goals article input {
+  width: 15px;
+}
+
+#verses article div {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+#verses article button {
+  background: transparent;
+  color: black;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  border-radius: 3px;
+  font-size: 0.7rem;
+  font-weight: 300;
+  font-family: var(--PRIMARY-FONT);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+#verses article button:hover {
+  background: #444;
+  color: white;
+  border: 1px solid transparent;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.1rem 0;
+  padding: 1.1rem 0;
+  margin-right: 2.7rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.header-elements h2 {
+  font-family: var(--PRIMARY-FONT);
+  font-weight: 400;
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+.header-elements h3 {
+  font-family: var(--SECONDARY-FONT);
+  font-weight: 100;
+  font-size: 1rem;
+}
+
+.goal {
+  font-family: var(--SECONDARY-FONT);
+  font-size: 1.2rem;
+}
+
+.header button {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  background: black;
+  transition: all 0.3s ease;
+}
+
+.header button:hover {
+  background: #333;
+}
+
+.header button a:any-link {
+  display: block;
+  cursor: pointer;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  color: white;
+  font-family: var(--PRIMARY-FONT);
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* POPUP CONTAINER STYLING */
+
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  padding-left: 410px;
+  display: grid;
+  place-content: center;
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.popup-container.active {
+  z-index: 10;
+  opacity: 1;
+}
+
+/* ADDING VERSE PROMPT POPUP */
+
+.verse-prompt {
+  background: #d8d8d8;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  width: 380px;
+  padding: 2rem 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  display: none;
+}
+
+.verse-prompt.active {
+  display: flex;
+}
+
+.popup-container h2 {
+  font-family: var(--PRIMARY-FONT);
+  font-weight: 300;
+}
+
+.verse-prompt section {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup-container input,
+.verse-prompt section textarea {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  width: 300px;
+  font-family: var(--SECONDARY-FONT);
+  padding: 0.7rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.popup-container input {
+  height: 35px;
+}
+
+.verse-prompt section textarea {
+  height: 100px;
+}
+
+.verse-prompt section input:focus,
+.verse-prompt section textarea:focus {
+  border: 1px solid black;
+}
+
+.popup-container button {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.4rem 1.4rem;
+  font-family: var(--PRIMARY-FONT);
+  font-weight: 200;
+  background: #444;
+  color: white;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.popup-container button:hover {
+  background: #666;
+}
+
+/* VIEWING VERSE */
+
+.verse-display {
+  background: #d8d8d8;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  padding: 2rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  display: none;
+}
+
+.verse-display.active {
+  display: flex;
+}
+
+.verse-display p {
+  font-family: var(--SECONDARY-FONT);
+  text-align: center;
+  line-height: 1.7;
+}
